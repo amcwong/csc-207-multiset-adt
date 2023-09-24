@@ -1,0 +1,57 @@
+@startuml classes_CSC-207-MULTISET-ADT
+set namespaceSeparator none
+class "ArrayListMultiSet" as adts.ArrayListMultiSet {
+  add(item: Any) -> bool
+  contains(item: Any) -> bool
+  count(item: Any) -> int
+  is_empty() -> bool
+  remove(item: Any) -> None
+  size() -> int
+}
+class "LinkedListMultiSet" as adts.LinkedListMultiSet {
+  add(item: Any) -> bool
+  contains(item: Any) -> bool
+  count(item: Any) -> int
+  is_empty() -> bool
+  remove(item: Any) -> None
+  size() -> int
+}
+class "MultiSet" as adts.MultiSet {
+  add(item: Any) -> bool
+  contains(item: Any) -> bool
+  count(item: Any) -> int
+  is_empty() -> bool
+  remove(item: Any) -> None
+  size() -> int
+}
+class "Tree" as adts.Tree {
+  average() -> float
+  count(item: Any) -> int
+  delete_item(item: Any) -> bool
+  insert(item: Any) -> None
+  insert_child(item: Any, parent: Any) -> bool
+  is_empty() -> bool
+  leaves() -> list
+}
+class "TreeMultiSet" as adts.TreeMultiSet {
+  add(item: Any) -> bool
+  contains(item: Any) -> bool
+  count(item: Any) -> int
+  is_empty() -> bool
+  remove(item: Any) -> None
+  size() -> int
+}
+class "_Node" as adts._Node {
+  item
+  item
+  next : NoneType
+  next : _Node | None
+}
+adts.ArrayListMultiSet --|> adts.MultiSet
+adts.LinkedListMultiSet --|> adts.MultiSet
+adts.TreeMultiSet --|> adts.MultiSet
+adts.Tree --* adts.TreeMultiSet : _tree
+adts.Tree --* adts.TreeMultiSet : _tree
+adts._Node --* adts.LinkedListMultiSet : _front
+adts._Node --* adts._Node : next
+@enduml
